@@ -1,0 +1,150 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+  color: #222;
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 0.5em 2em;
+}
+.loan-officer-box {
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 0.75em 1.5em;
+  font-size: 1em;
+  color: #222;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2em;
+  margin: 0;
+  padding: 0;
+}
+.main-nav ul li a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05em;
+}
+.main-nav ul li a:hover {
+  text-decoration: underline;
+}
+.realtor-btn {
+  background: #e53935;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 0.7em 1.5em;
+  margin-left: 2em;
+  text-decoration: none;
+  font-size: 1em;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  transition: background 0.2s;
+}
+.realtor-btn:hover {
+  background: #b71c1c;
+}
+
+.hero {
+  background: linear-gradient(120deg, #e3ebf9 0%, #f7f7f7 100%);
+  text-align: center;
+  padding: 3em 1em 2em 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.hero h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  color: #222a38;
+}
+.hero p {
+  font-size: 1.2em;
+  color: #444;
+  margin-bottom: 2em;
+}
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+.btn {
+  display: inline-block;
+  padding: 0.9em 2em;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.btn-primary {
+  background: #2962ff;
+  color: #fff;
+  border: none;
+}
+.btn-primary:hover {
+  background: #0039cb;
+}
+.btn-outline {
+  background: #fff;
+  color: #2962ff;
+  border: 2px solid #2962ff;
+}
+.btn-outline:hover {
+  background: #e3ebf9;
+}
+
+.rates-section {
+  background: #fff;
+  margin: 2em auto;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 2em 1.5em;
+  text-align: center;
+}
+.rates-section h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: #222a38;
+}
+.rates-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  margin-bottom: 1.5em;
+}
+.btn-toggle {
+  background: #f3f4f6;
+  color: #222;
+  border: none;
+  font-weight: 600;
+  padding: 0.9em 2em;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.btn-toggle:hover {
+  background: #e3ebf9;
+}
+.btn.active {
+  background: #2962ff;
+  color: #fff;
+}
+.rates-content {
+  font-size: 1.1em;
+  color: #222;
+}
