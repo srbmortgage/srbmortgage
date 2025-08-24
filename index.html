@@ -439,8 +439,10 @@
                 </button>
             </div>
             <p class="text-gray-600 mb-6">Stay informed about rate drops and refinancing opportunities. We'll notify you when rates improve enough to potentially save you money.</p>
-            <form id="refinanceAlertForm" class="space-y-4" method="POST" action="https://formspree.io/f/mqadzdln" >
+            <form id="refinanceAlertForm" class="space-y-4" method="POST" action="https://api.web3forms.com/submit" >
             <input name="subject" type="hidden" value="Refinance Subscription" />
+            <!-- Replace with your Access Key -->
+            <input type="hidden" name="access_key" value="07b40573-254e-4ace-afa2-a117672dbe38">
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
                     <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="your@email.com">
