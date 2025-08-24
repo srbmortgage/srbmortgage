@@ -1,21 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SRB Real Estate</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRB Reality - Buy or Sell Your Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+        
+        .form-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(59, 130, 246, 0.3);
+        }
+    </style>
 </head>
-<body>
-  <nav>
-    <ul>
-      <li><a href="index.html">Mortgage</a></li>
-      <li><a href="real-estate.html">Real Estate</a></li>
-    </ul>
-  </nav>
-  <main>
-    <h1>Real Estate Services</h1>
-    <p>Explore our real estate listings and expert guidance for buying or selling your property.</p>
-  </main>
-</body>
+<body class="bg-gray-50">
+    <!-- Agent Details Section -->
+    <section class="bg-white border-b border-gray-200 py-6">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-2">Srikanth Reddy Bollampalli</h2>
+                    <p class="text-gray-600 mb-1">Licensed Real Estate Agent & Mortgage Loan Originator</p>
+                    <div class="text-sm text-gray-500 space-y-1">
+                        <p>📍 Serving Atlanta Metro Area & Georgia</p>
+                        <p>🏠 GA Real Estate License #[LICENSE NUMBER]</p>
+                        <p>🏦 NMLS ID #2460039</p>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <div class="space-y-2">
+                        <p class="text-lg font-semibold text-gray-800">📞 404-200-3346</p>
+                        <p class="text-lg font-semibold text-gray-800">📞 470-223-5655</p>
+                        <p class="text-gray-600">✉️ srbreality.atl@gmail.com</p>
+                    </div>
+                    <div class="mt-3 flex justify-center md:justify-end space-x-2">
+                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Real Estate</span>
+                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Mortgage Services</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                🏠 SRB Reality
+            </h1>
+            <p class="text-xl mb-8 opacity-90">
+                Whether you're buying your dream home or selling your current property, we're here to help you every step of the way.
+            </p>
+            <div class="text-lg mb-8">
+                <span class="inline-block bg-white/20 px-4 py-2 rounded-full mr-4">✅ Free Consultation</span>
+                <span class="inline-block bg-white/20 px-4 py-2 rounded-full">✅ Expert Guidance</span>
+            </div>
+            <div class="mt-8">
+                <a href="#" onclick="window.open('https://your-mortgage-site.com', '_blank')" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-lg text-lg transition-all duration-300 hover:transform hover:-translate-y-1 hover:shadow-lg">
+                    🏦 Get Pre-Approved for Your Mortgage
+                </a>
+                <p class="text-white/80 text-sm mt-2">Licensed Mortgage Loan Originator - NMLS #2460039</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Form Section -->
+    <section class="py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Get Started Today</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Fill out the form below and our experienced real estate professionals will contact you within 24 hours to discuss your needs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Buying Form -->
+                <div class="form-card bg-white rounded-lg shadow-lg p-8">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">🔍</div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Looking to Buy?</h3>
+                        <p class="text-gray-600">Find your perfect home with our expert guidance</p>
+                    </div>
+
+                    <form id="buyingForm" class="space-y-4">
+                        <input type="hidden" name="formType" value="buying">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                                <input type="text" name="firstName" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                                <input type="text" name="lastName" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                            <input type="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                            <input type="tel" name="phone" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Preferred Location</label>
+                            <input type="text" name="location" placeholder="City, neighborhood, or ZIP code" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Budget Range</label>
+                                <select name="budget" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Select budget range</option>
+                                    <option value="under-200k">Under $200,000</option>
+                                    <option value="200k-400k">$200,000 - $400,000</option>
+                                    <option value="400k-600k">$400,000 - $600,000</option>
+                                    <option value="600k-800k">$600,000 - $800,000</option>
+                                    <option value="800k-1m">$800,000 - $1,000,000</option>
+                                    <option value="over-1m">Over $1,000,000</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Property Type</label>
+                                <select name="propertyType" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Any type</option>
+                                    <option value="single-family">Single Family Home</option>
+                                    <option value="condo">Condominium</option>
+                                    <option value="townhouse">Townhouse</option>
+                                    <option value="multi-family">Multi-Family</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Timeline</label>
+                            <select name="timeline" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">When are you looking to buy?</option>
+                                <option value="immediately">Immediately</option>
+                                <option value="1-3-months">1-3 months</option>
+                                <option value="3-6-months">3-6 months</option>
+                                <option value="6-12-months">6-12 months</option>
+                                <option value="over-1-year">Over 1 year</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Additional Comments</label>
+                            <textarea name="comments" rows="3" placeholder="Tell us about your specific needs, preferences, or questions..." class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full btn-primary bg-blue-600 text-white py-3 rounded-md font-semibold hover:bg-blue-700">
+                            🔍 Find My Dream Home
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Selling Form -->
+                <div class="form-card bg-white rounded-lg shadow-lg p-8">
+                    <div class="text-center mb-6">
+                        <div class="text-5xl mb-4">💰</div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Ready to Sell?</h3>
+                        <p class="text-gray-600">Get maximum value for your property</p>
+                    </div>
+
+                    <form id="sellingForm" class="space-y-4">
+                        <input type="hidden" name="formType" value="selling">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                                <input type="text" name="firstName" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                                <input type="text" name="lastName" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+                            <input type="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+                            <input type="tel" name="phone" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Property Address *</label>
+                            <input type="text" name="propertyAddress" required placeholder="Full address of property to sell" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Bedrooms</label>
+                                <select name="bedrooms" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Select</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6+">6+</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Bathrooms</label>
+                                <select name="bathrooms" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                    <option value="">Select</option>
+                                    <option value="1">1</option>
+                                    <option value="1.5">1.5</option>
+                                    <option value="2">2</option>
+                                    <option value="2.5">2.5</option>
+                                    <option value="3">3</option>
+                                    <option value="3.5+">3.5+</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Square Feet</label>
+                                <input type="number" name="squareFeet" placeholder="e.g., 2000" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Property Type</label>
+                            <select name="propertyType" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">Select property type</option>
+                                <option value="single-family">Single Family Home</option>
+                                <option value="condo">Condominium</option>
+                                <option value="townhouse">Townhouse</option>
+                                <option value="multi-family">Multi-Family</option>
+                                <option value="land">Land/Lot</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Timeline to Sell</label>
+                            <select name="timeline" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">When do you want to sell?</option>
+                                <option value="immediately">As soon as possible</option>
+                                <option value="1-3-months">1-3 months</option>
+                                <option value="3-6-months">3-6 months</option>
+                                <option value="6-12-months">6-12 months</option>
+                                <option value="just-exploring">Just exploring options</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Expected Price Range</label>
+                            <input type="text" name="expectedPrice" placeholder="e.g., $400,000 - $450,000" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Additional Information</label>
+                            <textarea name="comments" rows="3" placeholder="Tell us about your property, recent improvements, or any specific concerns..." class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full btn-primary bg-green-600 text-white py-3 rounded-md font-semibold hover:bg-green-700">
+                            💰 Get My Home Valuation
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Why Choose Us?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Quick Response</h3>
+                    <p class="text-gray-600">We'll contact you within 24 hours of your submission</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Expert Guidance</h3>
+                    <p class="text-gray-600">Professional advice from experienced real estate agents</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl mb-4">💯</div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">No Obligation</h3>
+                    <p class="text-gray-600">Free consultation with no strings attached</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GREC Compliance Notice -->
+    <section class="bg-blue-50 py-8 border-t-2 border-blue-200">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="bg-white rounded-lg p-6 shadow-sm">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">📋 Important Disclosure</h3>
+                <div class="text-sm text-gray-700 space-y-3">
+                    <p><strong>Georgia Real Estate License Law Compliance:</strong> All real estate activities conducted through this website are subject to Georgia Real Estate License Law and regulations of the Georgia Real Estate Commission (GREC).</p>
+                    
+                    <p><strong>Brokerage Relationship:</strong> Georgia law requires real estate licensees to provide consumers with information about brokerage relationships. Before working with any agent, you will receive the Georgia Brokerage Relationships in Real Estate Transactions brochure explaining your options.</p>
+                    
+                    <p><strong>Equal Housing Opportunity:</strong> We are committed to fair housing practices and equal opportunity in housing. We do not discriminate based on race, color, religion, sex, handicap, familial status, national origin, sexual orientation, or gender identity.</p>
+                    
+                    <p><strong>Mortgage Loan Originator (MLO):</strong> Srikanth Reddy Bollampalli is a licensed Mortgage Loan Originator. NMLS ID #2460039. This mortgage loan originator is licensed and/or registered under the laws of Georgia. For licensing information, go to: www.nmlsconsumeraccess.org</p>
+                    
+                    <p><strong>Data Privacy:</strong> Information submitted through this website is collected for the purpose of providing real estate services. We do not sell or share your personal information with third parties except as necessary to provide requested services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="text-2xl font-bold mb-4">🏠 SRB Reality</div>
+            <p class="text-gray-300 mb-4">Your trusted partner in buying and selling homes</p>
+            <div class="text-gray-300">
+                <p>📞 404-200-3346 / 470-223-5655 | ✉️ srbreality.atl@gmail.com</p>
+                <div class="mt-4 space-y-1 text-sm">
+                    <p><strong>Georgia Real Estate License Information:</strong></p>
+                    <p>Srikanth Reddy Bollampalli - Georgia Real Estate License #[LICENSE NUMBER]</p>
+                    <p>[BROKERAGE NAME] - Georgia Real Estate License #[BROKERAGE LICENSE NUMBER]</p>
+                    <p>Licensed by the Georgia Real Estate Commission</p>
+                    <p>Contact GREC: (404) 656-3916 | www.grec.state.ga.us</p>
+                </div>
+                <div class="mt-4 flex justify-center items-center space-x-4 text-sm">
+                    <span>🏠 Equal Housing Opportunity</span>
+                    <span>•</span>
+                    <span>MLS Participant</span>
+                </div>
+                <p class="mt-4 text-sm">&copy; 2025 SRB Reality. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handlers
+        document.getElementById('buyingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleFormSubmission(this, 'buying');
+        });
+
+        document.getElementById('sellingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleFormSubmission(this, 'selling');
+        });
+
+        function handleFormSubmission(form, type) {
+            // Get form data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            // Show success message
+            const actionText = type === 'buying' ? 'home search' : 'home valuation';
+            const followUpText = type === 'buying' ? 
+                'We\'ll send you matching properties and schedule a consultation to discuss your needs.' :
+                'We\'ll prepare a comprehensive market analysis and contact you with your home\'s estimated value.';
+            
+            alert(`✅ Thank you for your ${actionText} request!\n\nWe've received your information and one of our experienced real estate professionals will contact you within 24 hours.\n\n${followUpText}\n\nNote: This is a demo website. In a real application, this data would be securely processed and stored.`);
+            
+            // Reset form
+            form.reset();
+            
+            // Log data for demo purposes (in real app, this would be sent to server)
+            console.log(`${type.charAt(0).toUpperCase() + type.slice(1)} form submission:`, data);
+        }
+
+        // Smooth scrolling for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form validation enhancement
+        function addFormValidation() {
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                const inputs = form.querySelectorAll('input[required]');
+                inputs.forEach(input => {
+                    input.addEventListener('blur', function() {
+                        if (this.value.trim() === '') {
+                            this.classList.add('border-red-500');
+                        } else {
+                            this.classList.remove('border-red-500');
+                            this.classList.add('border-green-500');
+                        }
+                    });
+                });
+            });
+        }
+
+        // Initialize form validation
+        addFormValidation();
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'974450c0b3f8677f',t:'MTc1NjA1Mzg3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
