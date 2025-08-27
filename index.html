@@ -93,7 +93,7 @@
                     <a href="#rates" onclick="scrollToSection('rates')" class="text-gray-700 hover:text-blue-600 font-medium cursor-pointer hidden" aria-label="View current rates">Today's Rates</a>
                     <a href="#calculator" class="text-gray-700 hover:text-blue-600 font-medium" aria-label="Use mortgage calculator">Calculator</a>
                     <button onclick="showRefinanceModal()" class="text-gray-700 hover:text-blue-600 font-medium cursor-pointer" aria-label="Sign up for refinance alerts">Refinance Alerts</button>
-                    <button onclick="scrollToSection('apply')" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-300" aria-label="Apply for mortgage now">Apply Now</button>
+                    <button onclick="openApply()" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-300" aria-label="Apply for mortgage now">Apply Now</button>
                 </div>
                 <button class="md:hidden text-gray-700" aria-label="Open mobile menu" aria-expanded="false">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -112,7 +112,7 @@
                 <h1 class="text-5xl font-bold mb-6">Your Dream Home Awaits</h1>
                 <p class="text-xl mb-8 max-w-3xl mx-auto">Get pre-approved in minutes with competitive rates and personalized service from experienced mortgage professionals.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onclick="scrollToSection('apply')" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Apply Now</button>
+                    <button onclick="openApply()" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Apply Now</button>
                     <button onclick="scrollToSection('calculator')" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300">Calculate Payment</button>
                 </div>
             </div>
@@ -474,6 +474,10 @@
                 top: elementPosition,
                 behavior: 'smooth'
             });
+        }
+
+        function openApply() {
+          window.open("https://181106.my1003app.com/2460039/register?time=1756239876131", "_blank");
         }
 
         function showRefinanceModal() {
