@@ -95,12 +95,28 @@
                     <button onclick="showRefinanceModal()" class="text-gray-700 hover:text-blue-600 font-medium cursor-pointer" aria-label="Sign up for refinance alerts">Refinance Alerts</button>
                     <button onclick="openApply()" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-300" aria-label="Apply for mortgage now">Apply Now</button>
                 </div>
-                <button class="md:hidden text-gray-700" aria-label="Open mobile menu" aria-expanded="false">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                    <button id="mobileMenuButton" class="md:hidden text-gray-700" aria-label="Open mobile menu" aria-expanded="false">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
             </div>
+                <!-- Mobile Navigation Menu -->
+                <div id="mobileMenu" class="md:hidden fixed inset-0 bg-black bg-opacity-40 z-50 hidden">
+                    <div class="absolute top-0 right-0 w-3/4 max-w-xs bg-white h-full shadow-lg p-8 flex flex-col space-y-6">
+                        <button id="closeMobileMenu" class="self-end text-gray-700 mb-6" aria-label="Close mobile menu">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                        <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium" aria-label="Go to home section" onclick="closeMobileMenu()">Home</a>
+                        <a href="#loans" class="text-gray-700 hover:text-blue-600 font-medium" aria-label="View loan types" onclick="closeMobileMenu()">Loan Types</a>
+                        <a href="#rates" class="text-gray-700 hover:text-blue-600 font-medium" aria-label="View current rates" onclick="closeMobileMenu()">Today's Rates</a>
+                        <a href="#calculator" class="text-gray-700 hover:text-blue-600 font-medium" aria-label="Use mortgage calculator" onclick="closeMobileMenu()">Calculator</a>
+                        <button onclick="showRefinanceModal();closeMobileMenu()" class="text-gray-700 hover:text-blue-600 font-medium cursor-pointer">Refinance Alerts</button>
+                        <button onclick="openApply();closeMobileMenu()" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">Apply Now</button>
+                    </div>
+                </div>
         </div>
     </nav>
 
@@ -475,6 +491,28 @@
                 behavior: 'smooth'
             });
         }
+
+            // Mobile menu toggle logic
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeMobileMenuBtn = document.getElementById('closeMobileMenu');
+
+            function openMobileMenu() {
+                mobileMenu.classList.remove('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'true');
+                document.body.classList.add('overflow-hidden');
+            }
+            function closeMobileMenu() {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('overflow-hidden');
+            }
+            mobileMenuButton.addEventListener('click', openMobileMenu);
+            closeMobileMenuBtn.addEventListener('click', closeMobileMenu);
+            // Also close menu when clicking outside the menu
+            mobileMenu.addEventListener('click', function(e) {
+                if (e.target === mobileMenu) closeMobileMenu();
+            });
 
         function openApply() {
           window.open("https://181106.my1003app.com/2460039/register?time=1756239876131", "_blank");
